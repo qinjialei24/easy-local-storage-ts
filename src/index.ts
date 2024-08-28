@@ -1,16 +1,16 @@
-interface LocalStorage {
-  set(value: string): void;
-  get(): string | null;
+interface LocalStorage <T> {
+  set(value: T): void;
+  get(): T | null;
   remove(): void;
 }
 
-export function createLocalStorage(key: string): LocalStorage {
+export function createLocalStorage<T>(key: string): LocalStorage<T> {
   return {
-    set(value: string) {
-      localStorage.setItem(key, value);
+    set(value: T) {
+      localStorage.setItem(key, JSON.stringify(value));
     },
     get() {
-       return localStorage.getItem(key);
+       return JSON.parse(localStorage.getItem(key) || 'null');
     },
     remove() {
         localStorage.removeItem(key);
