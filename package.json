@@ -1,10 +1,13 @@
 {
   "name": "easy-local-storage-ts",
-  "version": "1.0.0",
+  "version": "0.0.3",
   "description": "",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "vitest",
     "clean": "rimraf dist",
@@ -15,7 +18,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "packageManager": "pnpm@8.9.0+sha256.8f5264ad1d100da11a6add6bb8a94c6f1e913f9e9261b2a551fabefad2ec0fec",
   "devDependencies": {
     "@types/jsdom": "^21.1.7",
