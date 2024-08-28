@@ -4,16 +4,16 @@ interface LocalStorage {
   remove(): void;
 }
 
-
 export function createLocalStorage(key: string): LocalStorage {
   return {
     set(value: string) {
+      localStorage.setItem(key, value);
     },
     get() {
-      return null;
+       return localStorage.getItem(key);
     },
     remove() {
+        localStorage.removeItem(key);
     }
   };
-
 }
