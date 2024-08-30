@@ -5,6 +5,11 @@ interface LocalStorage <T> {
 }
 
 export function createLocalStorage<T>(key: string): LocalStorage<T> {
+  const existsKey: string[] = [];
+  if (existsKey.includes(key)) {
+    throw new Error('Key already exists!');
+  }
+  existsKey.push(key);
   return {
     set(value: T) {
       localStorage.setItem(key, JSON.stringify(value));
