@@ -22,7 +22,6 @@ describe('createLocalStorage', () => {
 
   afterEach(() => {
     vi.restoreAllMocks();
-    global.localStorage.clear();
   });
 
   it('should throw an error when key already exists', () => {
