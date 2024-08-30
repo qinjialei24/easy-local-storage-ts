@@ -4,8 +4,9 @@ interface LocalStorage <T> {
   remove(): void;
 }
 
+let existsKey: string[] = [];
+
 export function createLocalStorage<T>(key: string): LocalStorage<T> {
-  const existsKey: string[] = [];
   if (existsKey.includes(key)) {
     throw new Error('Key already exists!');
   }
@@ -21,4 +22,9 @@ export function createLocalStorage<T>(key: string): LocalStorage<T> {
         localStorage.removeItem(key);
     }
   };
+}
+
+// 添加一个用于测试的函数来重置 existsKey
+export function __resetExistsKey() {
+  existsKey = [];
 }
