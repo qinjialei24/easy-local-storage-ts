@@ -17,6 +17,7 @@
   },
   "scripts": {
     "test": "vitest",
+    "test:ci": "vitest run",
     "clean": "rimraf dist",
     "build": "pnpm run clean && cross-env NODE_ENV=production node tsconfig.js && pnpm run build:esm && pnpm run build:cjs",
     "build:dev": "pnpm run clean && cross-env NODE_ENV=development node tsconfig.js && pnpm run build:esm && pnpm run build:cjs",

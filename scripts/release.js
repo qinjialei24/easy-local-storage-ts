@@ -63,13 +63,17 @@ function release(type) {
   }
 }
 
+function runTests() {
+  exec('pnpm run test:ci');
+}
+
 function continueRelease(type) {
   try {
     // 拉取最新的更改
     exec('git pull');
 
     // 运行测试
-    exec('pnpm run test');
+    runTests();
 
     // 更新版本
     updateVersion(type);
